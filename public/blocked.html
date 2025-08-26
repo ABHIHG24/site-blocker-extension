@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website Blocked</title>
+    <style>
+      :root {
+        --primary-color: #0073e6;
+        --hover-color: #005bb5;
+        --text-color: #333;
+        --bg-color: #f9f9f9;
+        --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: var(--font-family);
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+      .container {
+        max-width: 500px;
+        width: 90%;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      .container img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+        border-radius: 4px;
+      }
+      .container h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      .container p {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      .container a {
+        display: inline-block;
+        margin: 0 10px;
+        text-decoration: none;
+        color: var(--primary-color);
+        font-weight: bold;
+        transition: color 0.3s ease;
+      }
+      .container a:hover {
+        color: var(--hover-color);
+      }
+      .blocked-list {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0 0;
+        text-align: left;
+      }
+      .blocked-list li {
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .blocked-list li:last-child {
+        border-bottom: none;
+      }
+      .remove-btn {
+        background-color: transparent;
+        border: none;
+        color: red;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      .add-container {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+      }
+      .add-container input {
+        padding: 8px;
+        font-size: 14px;
+        width: 70%;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .add-container button {
+        padding: 8px 12px;
+        font-size: 14px;
+        border: none;
+        background-color: var(--primary-color);
+        color: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .add-container button:hover {
+        background-color: var(--hover-color);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Display the image (ensure quote1.webp is in your public folder) -->
+      <img src="quote1.webp" alt="Blocked" />
+      <h2>This site is blocked!</h2>
+      <p>For more learning, visit:</p>
+      <a href="https://www.udemy.com/" target="_blank" rel="noreferrer"
+        >Udemy</a
+      >
+      <a href="https://www.youtube.com/" target="_blank" rel="noreferrer"
+        >YouTube</a
+      >
+      <hr />
+      <h3>Blocked Websites:</h3>
+      <ul class="blocked-list" id="blocked-list">
+        <!-- List items will be injected here dynamically -->
+      </ul>
+      <div class="add-container">
+        <input
+          type="text"
+          id="new-site"
+          placeholder="Add website (e.g. *.newsite.com)"
+        />
+        <button id="add-btn">Add</button>
+      </div>
+    </div>
+    <script src="blocked.js"></script>
+  </body>
+</html>

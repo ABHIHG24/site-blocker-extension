@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Custom Site Blocker",
+  "version": "1.0",
+  "description": "Blocks access to specified websites and provides a dynamic blacklist.",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon16.png"
+  },
+  "permissions": ["declarativeNetRequest", "storage", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "blocked.html",
+        "blocked.js",
+        "quote1.webp",
+        "blockedSites.json"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
